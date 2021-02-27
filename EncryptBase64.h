@@ -129,7 +129,7 @@ int CEncryptBase64::Decode(const char* pSrc, unsigned char* pDst, int nSrcLen)
             nValue += DeBase64Tab[*pSrc++] << 12;
             *pDst++ = (nValue & 0x00ff0000) >> 16;
             nDstLen++;
-            std::cout << DecStrToHexStr(std::to_string((nValue & 0x00ff0000) >> 16)) << std::endl;
+            std::cout << DecStrToHexStr(std::to_string((nValue & 0x00ff0000) >> 16));
             //std::cout << DecStrToHexStr((char*)((nValue & 0x00ff0000) >> 16)) << std::endl;
             
             if (*pSrc != '=')
@@ -137,7 +137,7 @@ int CEncryptBase64::Decode(const char* pSrc, unsigned char* pDst, int nSrcLen)
                 nValue += DeBase64Tab[*pSrc++] << 6;
                 *pDst++ = (nValue & 0x0000ff00) >> 8;
                 nDstLen++;
-                std::cout << DecStrToHexStr(std::to_string((nValue & 0x0000ff00) >> 8)) << std::endl;
+                std::cout << DecStrToHexStr(std::to_string((nValue & 0x0000ff00) >> 8));
                 //std::cout << DecStrToHexStr((char*)((nValue & 0x0000ff00) >> 8)) << std::endl;
  
                 if (*pSrc != '=')
@@ -145,7 +145,7 @@ int CEncryptBase64::Decode(const char* pSrc, unsigned char* pDst, int nSrcLen)
                     nValue += DeBase64Tab[*pSrc++];
                     *pDst++ =nValue & 0x000000ff;
                     nDstLen++;
-                    std::cout << DecStrToHexStr(std::to_string(nValue & 0x000000ff)) << std::endl;
+                    std::cout << DecStrToHexStr(std::to_string(nValue & 0x000000ff));
                     //std::cout << DecStrToHexStr((char*)(nValue & 0x000000ff)) << std::endl;
                     
                 }
